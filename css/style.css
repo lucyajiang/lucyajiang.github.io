@@ -18,6 +18,23 @@
   border-radius: 17%;
 }
 
+.image-full-width {
+  width: 100%;
+}
+
+.image-grid {
+  width: 49%;
+  padding-right: 8px;
+  padding-bottom: 12px;
+}
+
+.image-wrap-text {
+  float: left;
+  width: 25%;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
 /* Spacing */
 
 .pad-left-20 {
