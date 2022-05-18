@@ -8,27 +8,35 @@
     <meta name="author" content="Lucy Jiang">
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap.css" rel="stylesheet">
-		<link href="../css/style.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
     <div class="d-flex flex-column min-vh-100">
       <header>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-purple">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">Lucy Jiang</a>
-						<div class="align-content-lg-end">
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	              <span class="navbar-toggler-icon"></span>
-	            </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <a class="nav-item nav-link" href="../research.html">Research</a>
-                  <a class="nav-item nav-link" href="../teaching.html">Teaching</a>
-                  <a class="nav-item nav-link" href="../leadership.html">Leadership</a>
-                  <a class="nav-item nav-link" href="../about.html">About</a>
-                  <a class="nav-item nav-link" href="../files/cv.pdf">CV</a>
-                </div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+          <div class="container-fluid pad-top-30">
+						<a class="navbar-brand" href="index.html"><h1 id="name">Lucy Jiang</h1></a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pad-top-20 pad-bottom-30" id="navbarNav">
+              <div class="navbar-nav mx-auto">
+								<a class="nav-item nav-link" href="index.html">Introduction</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+								<a class="nav-item nav-link active" href="#">Learning Statement</a>
+								<!-- <a class="nav-item nav-link" href="year-1.html">Year 1</a>
+								<a class="nav-item nav-link" href="year-2.html">Year 2</a>
+								<a class="nav-item nav-link" href="year-3.html">Year 3</a>
+								<a class="nav-item nav-link" href="year-4.html">Year 4</a> -->
+								<a class="nav-item nav-link" href="research.html">Research</a>
+                <a class="nav-item nav-link" href="teaching.html">Teaching</a>
+                <a class="nav-item nav-link" href="leadership.html">Leadership</a>
               </div>
             </div>
           </div>
@@ -42,7 +50,7 @@
           <div class="row justify-content-start gx-5 pad-top-30">
             <div class="col-4">
               <!-- <img src="./files/Lucy.jpg" class="headshot" alt="Headshot of Lucy, wearing a maroon sweater, puzzle piece necklace, and standing in front of a grass field"> -->
-              <img src="../files/Lucy-Cake.jpg" class="headshot" alt="Image of Lucy holding a two-tiered wedding cake with pastel pink flowers and rose gold detailing">
+              <!-- <img src="../files/Lucy-Cake.jpg" class="headshot" alt="Image of Lucy holding a two-tiered wedding cake with pastel pink flowers and rose gold detailing">
               <p class="pad-top-20">I'm a senior studying Computer Science and Entrepreneurship at the University of Washington, with a focus on accessibility!</p>
               <p class="text-muted">(And yes, I made this cake 🍰)</p>
 
@@ -50,41 +58,41 @@
               <a href="https://scholar.google.com/citations?user=-XzH6PkAAAAJ&hl=en" target="_blank"><img src="../files/icons/GoogleScholar.png" class="social-icon"alt="Google Scholar logo"></a>
               <a href="https://www.linkedin.com/in/lucyajiang/" target="_blank"><img src="../files/icons/LinkedIn.png" class="social-icon" alt="LinkedIn logo"></a>
               <a href="https://www.instagram.com/lucyajiang/" target="_blank"><img src="../files/icons/Instagram.jpeg" class="social-icon" alt="Instagram logo"></a>
-							<a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon" id="rounded-icon" alt="Twitter logo"></a>
+							<a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon" id="rounded-icon" alt="Twitter logo"></a> -->
+							<div>
+								<img src="./files/lcm2018.jpg" class="image-full-width float-center" alt="Lucy standing in front of a pink neon sign saying 'Hello World' at the Living Computer Museum">
+								<p class="text-muted caption">My first-ever college field trip: the Living Computer Museum during Early Fall Start!</p>
+							</div>
             </div>
 
             <div class="col-8">
-              <h2>Hello World! 🌎</h2>
-              <div class="pad-top-10">
-                <h4>Learning Statement</h4>
+              <h1 class="pad-bottom-10">Learning Statement</h1>
 
-                <p>When I was admitted to UW and the Allen School in 2018, I thought that computer science (CS)
-                was only about robots, hackathons, and big tech. I genuinely stumbled into this field by accident.
-                However, during the department’s Early Fall Start (EFS) course, a lecture by Professor Emeritus
-                Richard Ladner introduced me to how CS can be applied to advance equity and improve accessibility.
-                Since then, I’ve embraced opportunities to connect my research and entrepreneurship experiences and
-                drive social change with technology.</p>
+              <p>When I was admitted to UW and the Allen School in 2018, I thought that computer science (CS)
+              was only about robots, hackathons, and big tech. I genuinely stumbled into this field by accident.
+              However, during the department’s Early Fall Start (EFS) course, a lecture by Professor Emeritus
+              Richard Ladner introduced me to how CS can be applied to advance equity and improve accessibility.
+              Since then, I’ve embraced opportunities to connect my research and entrepreneurship experiences and
+              drive social change with technology.</p>
 
-                <p>In my first year, I attended the Study Away Silicon Valley (SASV) program as one of five students
-                in the UW delegation. This week cemented my interest in and passion for accessibility, answering
-                questions while giving rise to new curiosities. Back then, I would have never guessed that this
-                one week would lay the groundwork for me to start an accessible technology venture and reconsider
-                my entire career trajectory.</p>
+              <p>In my first year, I attended the Study Away Silicon Valley (SASV) program as one of five students
+              in the UW delegation. This week cemented my interest in and passion for accessibility, answering
+              questions while giving rise to new curiosities. Back then, I would have never guessed that this
+              one week would lay the groundwork for me to start an accessible technology venture and reconsider
+              my entire career trajectory.</p>
 
-                <p>Before my junior year, I never imagined pursuing academia because I had never seen anyone
-                who looked like me in the field. Working with role models and mentors I could relate to was critical
-                to inspiring me to break away from my fear of failure, to envision a career in academia, and to apply
-                for a PhD. In the fall of my senior year, I took a leap of faith and applied to PhD programs in HCI
-                and accessibility. I was inspired by the professors I had worked with, and kept on coming back to the
-                projects that excited me so much more than the ones I had seen previously in industry.</p>
+              <p>Before my junior year, I never imagined pursuing academia because I had never seen anyone
+              who looked like me in the field. Working with role models and mentors I could relate to was critical
+              to inspiring me to break away from my fear of failure, to envision a career in academia, and to apply
+              for a PhD. In the fall of my senior year, I took a leap of faith and applied to PhD programs in HCI
+              and accessibility. I was inspired by the professors I had worked with, and kept on coming back to the
+              projects that excited me so much more than the ones I had seen previously in industry.</p>
 
-                <p>I’m thankful for the extraordinary people and opportunities at UW that have helped me discover my
-                future path and my passions for accessibility, teaching, and empathetic leadership. This journey has not
-                been linear, nor has it been straightforward, but I believe that the obstacles and roadblocks that I
-                faced have shaped me into who I am today. As I pursue a PhD and the possibilities that lie beyond, I
-                aspire to become someone who can illuminate and empower others to find their own pathway.</p>
-
-              </div>
+              <p>I’m thankful for the extraordinary people and opportunities at UW that have helped me discover my
+              future path and my passions for accessibility, teaching, and empathetic leadership. This journey has not
+              been linear, nor has it been straightforward, but I believe that the obstacles and roadblocks that I
+              faced have shaped me into who I am today. As I pursue a PhD and the possibilities that lie beyond, I
+              aspire to become someone who can illuminate and empower others to find their own pathway.</p>
             </div>
           </div>
         </div>
