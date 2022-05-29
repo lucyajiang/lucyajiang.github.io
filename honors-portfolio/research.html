@@ -18,25 +18,40 @@
 
 	<body>
     <div class="d-flex flex-column min-vh-100">
-      <header>
+
+			<header>
         <nav class="navbar sticky-top navbar-expand-lg navbar-light">
           <div class="container-fluid pad-top-30">
-						<a class="navbar-brand" href="index.html"><h1 id="name">Lucy Jiang</h1></a>
+						<a class="navbar-brand" href="index.html"><h2 id="name">Lucy Jiang</h2></a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse pad-top-20 pad-bottom-30" id="navbarNav">
+            <div class="collapse navbar-collapse pad-top-20 pad-bottom-30 navbarNavDropdown" id="navbarNav">
               <div class="navbar-nav mx-auto">
-								<a class="nav-item nav-link" href="index.html">Introduction</a>
-                <a class="nav-item nav-link" href="about.html">About</a>
-								<a class="nav-item nav-link" href="learning-statement.html">Learning Statement</a>
-								<!-- <a class="nav-item nav-link" href="year-1.html">Year 1</a>
-								<a class="nav-item nav-link" href="year-2.html">Year 2</a>
-								<a class="nav-item nav-link" href="year-3.html">Year 3</a>
-								<a class="nav-item nav-link" href="year-4.html">Year 4</a> -->
-								<a class="nav-item nav-link active" href="#">Research</a>
-                <a class="nav-item nav-link" href="teaching.html">Teaching</a>
-                <a class="nav-item nav-link" href="leadership.html">Leadership</a>
+								<div class="nav-item">
+									<a class="nav-link" href="index.html">Introduction</a>
+								</div>
+								<div class="nav-item">
+									<a class="nav-link" href="learning-statement.html">Learning Statement</a>
+								</div>
+								<div class="nav-item dropdown">
+									<a class="nav-link" href="academics.html" id="navbarDropdownMenuLink" aria-expanded="false">Academics</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item nav-link" href="year1.html">Year 1</a>
+										<a class="dropdown-item nav-link" href="year2.html">Year 2</a>
+										<a class="dropdown-item nav-link" href="year3.html">Year 3</a>
+										<a class="dropdown-item nav-link" href="year4.html">Year 4</a>
+									</div>
+								</div>
+								<div class="nav-item">
+									<a class="nav-link active" aria-current="page" href="#">Research</a>
+								</div>
+								<div class="nav-item">
+									<a class="nav-link" href="teaching.html">Teaching</a>
+								</div>
+								<div class="nav-item">
+									<a class="nav-link" href="leadership.html">Leadership</a>
+								</div>
               </div>
             </div>
           </div>

@@ -1,0 +1,381 @@
+/*
+Name: Lucy Jiang
+Date: 2018.08.27
+Section: CSE 190e
+This is the style.css page for my website. It is linked to all pages in the
+website to make it look similar to the official UW website (uw.edu). This
+also adds cohesion to the website.
+*/
+
+/* Overall */
+p, li, h3, h4, h5, h6 {
+  color: #444444;
+  font-family: "Open Sans";
+}
+
+h1, h2 {
+  font-family: "Encode Sans";
+  color: #4b2e83;
+}
+
+body {
+  background-image: url(background.png);
+  margin: 0px;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #4b2e83;
+  font-family: "Open Sans";
+}
+
+a:hover {
+  color: #b7a57a;
+}
+
+/* Header and Navigation Bar */
+background {
+  height: 200px;
+}
+
+header img {
+  height: 54px;
+  float: left;
+  margin: 0px 30px 20px 20px;
+}
+
+#name {
+  margin-top: 30px;
+  line-height: 30%;
+  font-size: 34px;
+  text-shadow: 2px 2px #cccccc;
+  font-weight: bold;
+}
+
+header h2 {
+  color: #b7a57a;
+  font-size: 24px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4b2e83;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.navbarli {
+  float: left;
+  color: white;
+}
+
+li a {
+  display: block;
+  color: white !important;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #b7a57a;
+  color: white;
+}
+
+.active {
+    background-color: #b7a57a;
+    color: white;
+}
+
+/* Home Page */
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  height: 50%;
+  width: 50%;
+  margin: 30px;
+  justify-content: flex-end;
+}
+
+.quote {
+  text-align: center;
+}
+
+#quote {
+  margin-top: 12vw;
+  font-size: 4vw;
+  align-items: center;
+}
+
+#attribution {
+  font-size: 3vw;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  clear: right;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b7a57a;
+  color: #4b2e83;
+  height: 80px;
+  justify-content: space-between;
+}
+
+footer img {
+  height: 40px;
+  float: left;
+  margin-top: 21px;
+  margin-left: 18px;
+}
+
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* About */
+.self {
+  float: left;
+  height: 451px;
+  margin: 30px;
+  border: double 10px;
+  border-color: #b7a57a;
+}
+
+.bio {
+  margin: 40px;
+}
+
+/* Experience */
+.resume {
+  margin: 20px;
+}
+
+
+/* Baking */
+.bloglink {
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 30px;
+}
+
+.caption {
+  text-align: center;
+  font-family: "Open Sans";
+  color: #444444;
+  font-size: 18px;
+}
+
+.instagrid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.insta {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  padding: 21px;
+}
+
+/* Portfolio */
+.portfolioitems {
+  padding-top: 30px;
+}
+
+#honorstitle {
+  text-align: center;
+  text-shadow: 2px 2px #cccccc;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.artifact {
+  float: left;
+  margin: 20px;
+  padding-left: 80px;
+  width: 50%;
+  display: flex;
+}
+
+.annotation {
+  padding-right: 80px;
+  padding-bottom: 20px;
+}
+
+#careerfair {
+  height: 300px;
+  padding-left: 60px;
+}
+
+#huskycookie {
+  height: 300px;
+}
+
+#toyadapt {
+  height: 200px;
+  padding-left: 60px;
+}
+
+#fallfest {
+  height: 300px;
+  padding-left: 40px;
+}
+
+.reflection {
+  text-align: center;
+}
+
+.reflectionborder {
+  border-top: 6px double #b7a57a;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 60px;
+  text-align: center;
+}
+
+#reflectionpdf {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  width: 800px;
+  height: 400px;
+}
+
+/* Projects */
+#projectstitle {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.projectlist {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Secret Santa - Projects */
+.secretsantaproject {
+  text-align: center;
+}
+
+#secretsantaassignments {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#secretsantatitle {
+  line-height: 50%;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#secretsantadescription {
+  line-height: 5%;
+  text-align: center;
+}
+
+#buttoncontrol {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* HCBS - Projects */
+.hcbsblog {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 20px solid white;
+  background-color: rgba(255, 217, 179, 0.8);
+  border-radius: 20px;
+  border-style: double;
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#hcbstitle {
+  font-size: 44px;
+  line-height: 50%;
+  text-align: center;
+  color: #444444;
+  font-family: 'Merriweather', serif;
+}
+
+#hcbssubtitle {
+  text-align: center;
+  color: #B73825;
+  line-height: 60%;
+  font-family: 'Merriweather', serif;
+}
+
+#publishdate {
+  color: #666666;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+}
+
+#hcbslinks {
+  color: #B73825;
+}
+
+#hcbslinks:visited {
+  color: #ce7318;
+}
+
+#hcbslinks:hover {
+  color: #ce7318;
+}
+
+#hcbsback {
+  margin-left: 1050px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: #B73825;
+  border: 3px solid white;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+#hcbspic {
+  width: 355px;
+  padding: 10px;
+  align-items: center;
+}
+
+/* Contact */
+.contact {
+  margin: 20px;
+}
