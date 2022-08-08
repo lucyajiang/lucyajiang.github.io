@@ -35,6 +35,11 @@
   padding-bottom: 8px;
 }
 
+.text-award {
+  color: #bf40fa;
+  font-weight: 600;
+}
+
 /* Spacing */
 
 .pad-left-20 {
