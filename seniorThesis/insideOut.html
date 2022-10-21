@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Lucy Jiang - Senior Thesis Prototype</title>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Prototype for my Senior Thesis.">
+    <meta name="author" content="Lucy Jiang">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+
+	<body>
+    <div class="d-flex flex-column min-vh-100">
+      <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-purple">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lucy Jiang - Senior Thesis Prototype</a>
+						<div class="align-content-lg-end">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	              <span class="navbar-toggler-icon"></span>
+	            </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <a class="nav-item nav-link" href="./insideOut.html">Inside Out</a>
+									<a class="nav-item nav-link" href="./ratatouille.html">Ratatouille</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <br>
+
+      <main class="flex-fill">
+        <div class="container">
+          <div class="row justify-content-start gx-5 pad-top-30">
+            <div class="col-5">
+							<h3>Metrics</h3>
+							<div class="pad-top-10">
+								<b>Seconds:</b>
+								<div id="seconds"></div>
+							</div>
+							<div class="pad-top-10">
+								<b>State:</b>
+								<div id="state"></div>
+							</div>
+
+							<br>
+
+							<h3>Log</h3>
+							<textarea rows="25" cols="45" id="log" style="margin-top: 10px">
+							</textarea>
+            </div>
+
+            <div class="col-7">
+							<h2>Inside Out - Disgust and Anger</h2>
+							<h3>Abundant Dialogue</h3>
+              <div class="pad-top-10">
+								<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+								<div id="player"></div>
+
+								<br>
+
+								<!-- Navigation Controls -->
+								<div class="pad-top-20">
+									<b>Navigation Controls</b> <br>
+									<div class="pad-top-10">
+										<button type="button" class="btn btn-primary btn-purple" onclick="play()">Play</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="pause()">Pause</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="jump(3)">Rewind</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="jump(-3)">Forward</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="time()">Timestamp</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="replay()" style="margin-left: 175px">Replay</button>
+									</div>
+								</div>
+
+								<!-- Description Controls -->
+								<div class="pad-top-20">
+									<b>Description Controls</b> <br>
+									<div class="pad-top-10">
+										<button type="button" class="btn btn-primary btn-purple" onclick="description(3)">Description</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="question()">Question</button>
+										<button type="button" class="btn btn-primary btn-purple" onclick="transcript(2)">Transcript</button>
+
+										<div class="pad-top-20">
+											Q: <input type="text" id="question" name="question"><br><br>
+											A: <input type="text" id="answer" name="answer"><br><br>
+											<button type="button" class="btn btn-primary btn-purple" onclick="submitQuestion()" style="margin-left: 85px">Submit</button>
+										</div>
+									</div>
+								</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+			<footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+          <span class="text-muted">&copy Lucy Jiang 2022</span>
+        </div>
+      </footer>
+    </div>
+
+		<script>
+			// 2. This code loads the IFrame Player API code asynchronously.
+			var tag = document.createElement('script');
+
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			// 3. This function creates an <iframe> (and YouTube player)
+			//    after the API code downloads.
+			var player;
+			function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+					height: '390',
+					width: '640',
+					videoId: 'AQ3hjymiCCg',
+					playerVars: {
+						'autoplay': 1,
+						'playsinline': 1
+					},
+					events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+					}
+				});
+			}
+
+			// 4. The API will call this function when the video player is ready.
+			function onPlayerReady(event) {
+				event.target.playVideo();
+			}
+
+			// 5. The API calls this function when the player's state changes.
+			//    The function indicates that when playing a video (state=1),
+			//    the player should play for six seconds and then stop.
+			var done = false;
+			function onPlayerStateChange(event) {
+				if (event.data == YT.PlayerState.PLAYING && !done) {
+					// setTimeout(stopVideo, 6000);
+					done = true;
+				}
+			}
+			function stopVideo() {
+				player.stopVideo();
+			}
+
+			///////////////////////////////////////
+			//  FUNCTIONS FOR AUDIO DESCRIPTION  //
+			///////////////////////////////////////
+
+			document.getElementById("seconds").innerHTML = "Not Playing";
+
+			var timesPlayed = 1;
+			document.getElementById("log").value = "---- Inside Out " + timesPlayed + " ----\n";
+
+			var q = document.getElementById("question");
+			var a = document.getElementById("answer");
+			q.value = "";
+			a.value = "";
+
+			function timestamp() {
+				return player.getCurrentTime().toFixed(3);
+			}
+
+			// Navigation Controls //
+
+			function play() {
+				player.playVideo();
+				writeLog("Nav \t Play \t" + timestamp());
+			}
+
+			function pause() {
+				player.pauseVideo();
+				writeLog("Nav \t Pause \t" + timestamp());
+			}
+
+			function jump(seconds) {
+				var newTime = timestamp() - seconds;
+				player.seekTo(newTime, true);
+				if (seconds < 0) {
+					writeLog("Nav \t Fwd \t" + timestamp());
+				} else {
+					writeLog("Nav \t Rwd \t" + timestamp());
+				}
+			}
+
+			function time() {
+				writeLog("Nav \t Time \t" + timestamp());
+			}
+
+			function replay() {
+				timesPlayed++;
+				writeLog("\n---- Inside Out " + timesPlayed + " ----");
+				player.seekTo(0, true);
+				player.playVideo();
+			}
+
+			// Description Controls //
+
+			// Transcript Arrays
+			const scriptTimestamp = [3, 5, 6, 7, 8, 9, 12, 17, 22, 24, 27, 30, 32, 37, 46, 48, 52, 54];
+			const scriptDialogue = ["Here we go, all right, open.",
+															"Hm, this looks new...",
+															"Think it's safe?",
+															"What is it?",
+															"Ahh...",
+															"Okay, caution - there is a dangerous smell, people. Hold on, what is that?",
+															"This is Disgust. She basically keeps Riley from being poisoned, physically and socially.",
+															"That is not brightly colored or shaped like a dinosaur, hold on guys. It's broccoli!",
+															"Yucky!",
+															"Well, I just saved our lives. Yeah, you're welcome.",
+															"Riley, if you don't eat your dinner, you're not going to get any dessert.",
+															"Wait. Did he just say we couldn't have dessert?",
+															"That's Anger. He... cares very deeply about things being fair.",
+															"So that's how you wanna play it, old man? No dessert? Oh, sure, we'll eat our dinner. Right after you eat THIS! AHH!",
+															"[cries]",
+															"Right, right, here comes an airplane! [airplane sound]",
+															"Oh! Airplane! We got an airplane, everybody.",
+															"Ooh."];
+			const scriptSpeaker = ["Riley's dad", "Joy", "Fear", "Sadness", "Riley's dad", "Disgust", "Joy", "Disgust", "Riley",
+															"Disgust", "Riley's dad", "Anger", "Joy", "Anger", "Riley", "Riley's dad", "Anger", "Emotions, collectively"];
+
+			// AD Arrays
+			const adTimestamp = [1, 23, 46, 57];
+			const adDescription = ["Riley sits in a high chair.",
+															"Riley flips her plate.",
+															"A marble rolls through a chute.",
+															"Another marble rolls down."];
+
+			// Play description within 3 seconds if it exists
+			function description(seconds) {
+				writeLog("AD **** \t Desc \t" + timestamp());
+
+				var start = timestamp() - seconds;
+				var end = timestamp() - (seconds * -1);
+        var closest = -1;
+        var closestDist = 4;
+				for (var i = 0; i < adTimestamp.length; i++) {
+					if (adTimestamp[i] > start && adTimestamp[i] < end) {
+            var dist = adTimestamp[i] - timestamp();
+            if (dist < closestDist) {
+              closest = i;
+              closestDist = dist;
+            }
+					}
+				}
+
+        // Play closest description
+        if (closest != -1) {
+          writeLog("\t \t " + adTimestamp[closest] + " // " + adDescription[closest]);
+          var filename = "./audioFiles/insideOutAD" + adTimestamp[closest] + ".wav";
+          var audio = new Audio(filename);
+          audio.play();
+        }
+			}
+
+			// Pause video and log timestamp
+			function question() {
+				player.pauseVideo();
+				writeLog("AD **** \t Qstn \t" + timestamp());
+			}
+
+			// Document the question and answer
+			function submitQuestion() {
+				writeLog("\t \t Q: " + q.value + " // A: " + a.value);
+
+				// Clear textboxes
+				q.value = "";
+				a.value = "";
+			}
+
+			// Log that they asked for the transcript and report the nearest caption(s)
+			function transcript(seconds) {
+				writeLog("AD **** \t Script \t" + timestamp());
+
+				var start = timestamp() - seconds;
+				var end = timestamp() - (seconds * -1);
+				for (var i = 0; i < scriptTimestamp.length; i++) {
+					if (scriptTimestamp[i] > start && scriptTimestamp[i] < end) {
+						writeLog("\t \t " + scriptTimestamp[i] + " // " + scriptDialogue[i] + " // " + scriptSpeaker[i]);
+					}
+				}
+			}
+
+			// Debugging and Metrics //
+
+			// Report timestamp
+			setInterval(function() {document.getElementById("seconds").innerHTML = timestamp()}, 5);
+
+			// Report player state
+			setInterval(function() {document.getElementById("state").innerHTML = player.getPlayerState()}, 100);
+
+			// Replay video (check if ended or cued every 12 seconds)
+			setInterval(function() {if (timestamp() == player.getDuration()) { replay() } }, 12000);
+
+			function writeLog(value) {
+				document.getElementById("log").value += value + "\n";
+			}
+
+		</script>
+	</body>
+</html>

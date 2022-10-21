@@ -40,6 +40,12 @@
   font-weight: 600;
 }
 
+.textbox {
+  background-color: #f5ecff;
+  padding: 20px;
+  margin: 20px 20px 20px 0px;
+}
+
 /* Spacing */
 
 .pad-left-20 {
@@ -56,4 +62,8 @@
 
 .pad-top-30 {
   padding-top: 30px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
 }

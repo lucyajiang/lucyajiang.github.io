@@ -1,0 +1,30 @@
+.bg-purple {
+  background-color: #6f42c1; /* --bs-purple */
+}
+
+.btn-purple {
+  background-color: #6f42c1; /* --bs-purple */
+  border: #6f42c1; /* --bs-purple */
+}
+
+.btn:hover {
+  background-color: #432874; /* --bs-purple-700 */
+}
+
+/* Spacing */
+
+.pad-left-20 {
+  padding-left: 20px;
+}
+
+.pad-top-10 {
+  padding-top: 10px;
+}
+
+.pad-top-20 {
+  padding-top: 20px;
+}
+
+.pad-top-30 {
+  padding-top: 30px;
+}
