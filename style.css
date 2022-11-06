@@ -22,17 +22,28 @@
   width: 100%;
 }
 
+.image-49-width {
+  width: 49%;
+}
+
 .image-grid {
   width: 49%;
   padding-right: 8px;
   padding-bottom: 12px;
 }
 
-.image-wrap-text {
+.image-wrap-text-left {
   float: left;
-  width: 32%;
-  padding-right: 24px;
-  padding-bottom: 8px;
+  width: 33%;
+  padding-right: 4%;
+  padding-bottom: 0.5%;
+}
+
+.image-wrap-text-right {
+  float: right;
+  width: 33%;
+  padding-left: 4%;
+  padding-bottom: 0.5%;
 }
 
 .text-award {
@@ -47,6 +58,10 @@
 }
 
 /* Spacing */
+
+.pad-10 {
+  padding: 10px;
+}
 
 .pad-left-20 {
   padding-left: 20px;
