@@ -46,6 +46,13 @@
   padding-bottom: 0.5%;
 }
 
+.image-wrap-text-right-landscape {
+  float: right;
+  width: 50%;
+  padding-left: 4%;
+  padding-bottom: 0.5%;
+}
+
 .image-wrap-caption-left {
   float: left;
   padding-bottom: 4%;
@@ -95,6 +102,22 @@ figcaption {
 
 .expandButton {
   width: 144px;
+}
+
+.quote {
+  position: relative;
+}
+
+.quote::before {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 5px;
+  position: absolute;
+  height: 100%;
+  background-color: #dddddd;
+  border-radius: 2.5px;
 }
 
 /* Spacing */
