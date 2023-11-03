@@ -51,11 +51,24 @@
             <div class="col-8">
               <h2>ASSETS 2023</h2>
               <div class="pad-top-10">
+                <!-- <figure class="image-wrap-text-right float-center">
+                  <img src="../files/assets2023/Presentation.JPG" class="image-wrap-caption-right" 
+                      alt="FIX">
+                  <figcaption>Description: FIX</figcaption>
+                </figure>
+                <p> </p> -->
+
+              <h3>Works Presented</h3>
                 <p>Super excited to have presented our paper, <b>Beyond Audio Description: Exploring 360° Video Accessibility with Blind and Low Vision Users Through Collaborative Creation</b>, at ASSETS this year! 🎉</p>
                 
-                <p>While audio description (AD) is a standard method for making traditional videos more accessible to blind and low vision (BLV) users, we lack an understanding of how to make 360° videos accessible. In our paper, we investigated how to <b>translate the immersion afforded by 360° videos in nonvisual ways beyond audio description</b>. Through 14 individual interviews and two collaborative workshops, we explored participants' preferences for immersive and engaging 360° video accessibility. Our design workshops presented a unique opportunity for participants with diverse backgrounds to build on each others' personal and professional experiences and collaboratively develop accessible 360° video prototypes. Participants included both <b>AD creators and users</b>, with a focus on BLV AD creators as their perspectives are underrepresented in prior work. We found that participants valued accurate vocabulary and different points of view for descriptions, preferred a variety of presentation locations for spatialized AD, appreciated sound effects for setting the mood and subtly guiding, and wished to engage multiple senses to boost engagement.</p>
+                <button onclick="showElementToggle('360vd')" class="btn expandButton" id="expandButton">Click to Expand</button>
+                <div id="360vd" style="display: none">
+                  <div class="pad-top-20"></div>
+                  <p>While audio description (AD) is a standard method for making traditional videos more accessible to blind and low vision (BLV) users, we lack an understanding of how to make 360° videos accessible. In our paper, we investigated how to <b>translate the immersion afforded by 360° videos in nonvisual ways beyond audio description</b>. Through 14 individual interviews and two collaborative workshops, we explored participants' preferences for immersive and engaging 360° video accessibility. Our design workshops presented a unique opportunity for participants with diverse backgrounds to build on each others' personal and professional experiences and collaboratively develop accessible 360° video prototypes. Participants included both <b>AD creators and users</b>, with a focus on BLV AD creators as their perspectives are underrepresented in prior work. We found that participants valued accurate vocabulary and different points of view for descriptions, preferred a variety of presentation locations for spatialized AD, appreciated sound effects for setting the mood and subtly guiding, and wished to engage multiple senses to boost engagement.</p>
 
-                <p>Through this research, we used a novel approach to elicit design ideas for accessible 360° video experiences and identify the benefits of including disabled people as creators of access technology. Understanding BLV people's perspectives on nonvisual immersion and engagement opens up possibilities for with implications for immersive media accessibility and future research directions to support disabled people as creators of access technology.</p>
+                  <p>Through this research, we used a novel approach to elicit design ideas for accessible 360° video experiences and identify the benefits of including disabled people as creators of access technology. Understanding BLV people's perspectives on nonvisual immersion and engagement opens up possibilities for with implications for immersive media accessibility and future research directions to support disabled people as creators of access technology.</p>
+                  <button onclick="closeElementJump('360vd')" class="btn expandButton">Click to Close</button>
+                </div>
                 <br>
 
                 <hr>
@@ -63,8 +76,15 @@
 
                 <p>Our poster, <b>"Invisible Illness Is No Longer Invisible": Making Social VR Avatars More Inclusive for Invisible Disability Representation</b>, was also presented at ASSETS!</p>
 
-                <p>As social virtual reality (VR) experiences become more popular, it is critical to design accessible and inclusive embodied avatars. However, social VR platforms have few customization features for people with invisible disabilities, including chronic health conditions, mental health conditions, and neurodivergence. Especially as invisible disabilities may not be immediately disclosed in the non-virtual world, we conducted semi-structured interviews with nine participants to better understand their perspectives on disclosure and representation in social VR. We found that invisibly disabled people used a unique, indirect approach to inform dynamic disclosure practices. Participants were interested in toggling representation across contexts and making the customization process more accessible. We argue for greater inclusivity in avatar customization options for disabled people and more investigation into invisible disability disclosure.</p>
+                <button onclick="showElementToggle('socialvr')" class="btn expandButton" id="expandButton">Click to Expand</button>
+                <div id="socialvr" style="display: none">
+                  <div class="pad-top-20"></div>
+                  <p>As social virtual reality (VR) experiences become more popular, it is critical to design accessible and inclusive embodied avatars. However, social VR platforms have few customization features for people with invisible disabilities, including chronic health conditions, mental health conditions, and neurodivergence. Especially as invisible disabilities may not be immediately disclosed in the non-virtual world, we conducted semi-structured interviews with nine participants to better understand their perspectives on disclosure and representation in social VR. We found that invisibly disabled people used a unique, indirect approach to inform dynamic disclosure practices. Participants were interested in toggling representation across contexts and making the customization process more accessible. We argue for greater inclusivity in avatar customization options for disabled people and more investigation into invisible disability disclosure.</p>
+                  <button onclick="closeElementJump('socialvr')" class="btn expandButton">Click to Close</button>
+                </div>
               </div>
+
+              <br>
 
               <!-- <h2>Photos</h2>
               <div class="pad-top-10">
@@ -96,8 +116,7 @@
                   </figure>
                 </div>
                 <br><br>
-              </div>
-            </div> -->
+              </div> -->
             </div>
 
             <div class="col-4">
@@ -154,5 +173,31 @@
       </footer>
     </div>
 		<script src="js/bootstrap.min.js"></script>
+
+    <script>
+      // OPEN AND CLOSE DETAILS
+      function showElementToggle(section) {
+        var x = document.getElementById(section);
+        if (x.style.display == "none") {
+          console.log("none to block");
+          x.style.display = "block";
+        } else {
+          console.log("back to none");
+          x.style.display = "none";
+        }
+
+        var elem = document.getElementById("expandButton");
+        if (elem.innerHTML == "Click to Expand") {
+          elem.innerHTML = "Click to Close";
+        } else {
+          elem.innerHTML = "Click to Expand";
+        }
+      } 
+
+      function closeElementJump(id) {
+        document.getElementById(id).style.display = "none";
+        document.getElementById("expandButton").innerHTML = "Click to Expand";
+      }
+    </script>
 	</body>
 </html>

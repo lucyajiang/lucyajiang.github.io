@@ -80,6 +80,23 @@ figcaption {
   margin: 20px 20px 20px 0px;
 }
 
+.btn {
+  background-color: #46218a;
+  border-color: #46218a;
+  color: white;
+}
+
+.btn:hover, .btn.active, .btn.focus, .btn:focus {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+  box-shadow: 0 0 0 0.25rem #6e42c13f;
+}
+
+.expandButton {
+  width: 144px;
+}
+
 /* Spacing */
 
 .pad-10 {
