@@ -49,25 +49,25 @@
 .image-wrap-text-right-landscape {
   float: right;
   width: 50%;
-  padding-left: 4%;
+  padding-left: 12px;
   padding-bottom: 0.5%;
 }
 
 .image-wrap-caption-left {
   float: left;
-  padding-bottom: 4%;
+  padding-bottom: 12px;
   width: 100%;
 }
 
 .image-wrap-caption-right {
   float: right;
-  padding-bottom: 4%;
+  padding-bottom: 12px;
   width: 100%;
 }
 
 .image-wrap-caption {
   float: center;
-  padding-bottom: 4%;
+  padding-bottom: 12px;
   width: 100%;
 }
 
