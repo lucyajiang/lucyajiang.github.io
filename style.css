@@ -35,22 +35,22 @@
 .image-wrap-text-left {
   float: left;
   width: 33%;
-  padding-right: 4%;
-  padding-bottom: 0.5%;
+  padding-right: 24px;
+  padding-bottom: 12px;
 }
 
 .image-wrap-text-right {
   float: right;
   width: 33%;
-  padding-left: 4%;
-  padding-bottom: 0.5%;
+  padding-left: 24px;
+  padding-bottom: 12px;
 }
 
 .image-wrap-text-right-landscape {
   float: right;
   width: 50%;
-  padding-left: 12px;
-  padding-bottom: 0.5%;
+  padding-left: 24px;
+  padding-bottom: 12px;
 }
 
 .image-wrap-caption-left {
