@@ -29,6 +29,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item nav-link" href="https://lucjia.github.io/research/assets2022">ASSETS 2022</a>
                       <a class="dropdown-item nav-link active" href="https://lucjia.github.io/research/assets2023">ASSETS 2023</a>
+                      <a class="dropdown-item nav-link" href="https://lucjia.github.io/research/chi2024">CHI 2024</a>
                     </div>
                   </div>
                   <a class="nav-item nav-link" href="https://lucjia.github.io/publications">Publications</a>
@@ -67,7 +68,7 @@
               <h3>Works Presented</h3>
                 <p>I had the opportunity to present our paper, <b>Beyond Audio Description: Exploring 360° Video Accessibility with Blind and Low Vision Users Through Collaborative Creation</b>. It was especially exciting since this was my first-ever first-author paper! 🎉</p>
                 
-                <button onclick="showElementToggle('360vd', 'expandButton1')" class="btn expandButton" id="expandButton1">Click to Expand</button>
+                <button onclick="showElementToggle('360vd', 'expandButton1')" class="btn expandButton" id="expandButton1">Click for Abstract</button>
                 <div id="360vd" style="display: none">
                   <div class="pad-top-20">
                     <div class="pad-left-20 quote">
@@ -81,7 +82,7 @@
                 <div class="pad-top-20"></div>
                 <p>Our poster, <b>"Invisible Illness Is No Longer Invisible": Making Social VR Avatars More Inclusive for Invisible Disability Representation</b>, was also presented at ASSETS!</p>
 
-                <button onclick="showElementToggle('socialvr', 'expandButton2')" class="btn expandButton" id="expandButton2">Click to Expand</button>
+                <button onclick="showElementToggle('socialvr', 'expandButton2')" class="btn expandButton" id="expandButton2">Click for Abstract</button>
                 <div id="socialvr" style="display: none">
                   <div class="pad-top-20">
                     <div class="pad-left-20 quote">
@@ -180,10 +181,10 @@
         }
 
         var elem = document.getElementById(buttonId);
-        if (elem.innerHTML == "Click to Expand") {
+        if (elem.innerHTML == "Click for Abstract") {
           elem.innerHTML = "Click to Close";
         } else {
-          elem.innerHTML = "Click to Expand";
+          elem.innerHTML = "Click for Abstract";
         }
       }
     </script>
