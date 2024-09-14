@@ -159,6 +159,23 @@
                     [<a href="https://www.youtube.com/watch?v=ew3UmgA6qc4" target="_blank">YouTube</a>]<br>
                 <br>
                 
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-cxva1" onclick="showElementToggle('bibtex-cxva', 'bibtex-btn-cxva1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-cxva2" onclick="copyCitation('citation-cxva', 'bibtex-btn-cxva2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-cxva" style="display: none">
+<pre class="bibtex-code"><code id="citation-cxva">@inproceedings{jiang2024context,
+    title={“It’s Kind of Context Dependent”: Understanding Blind and Low Vision People’s Video Accessibility Preferences Across Viewing Scenarios},
+    author={Jiang, Lucy and Jung, Crescentia and Phutane, Mahika and Stangl, Abigale and Azenkot, Shiri},
+    booktitle={Proceedings of the CHI Conference on Human Factors in Computing Systems},
+    pages={1--20},
+    year={2024},
+    url={https://doi.org/10.1145/3613904.3642238}
+}</code></pre>
+                </div>
+
+                <br>
                 <hr>
                 <br>
 
@@ -169,7 +186,24 @@
                   S. Heung, <b>L. Jiang</b>, S. Azenkot, A. Vashistha<br>
                 </div>
                 <br>
+                                
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-dcc1" onclick="showElementToggle('bibtex-dcc', 'bibtex-btn-dcc1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-dcc1" onclick="copyCitation('citation-dcc', 'bibtex-btn-dcc2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-dcc" style="display: none">
+<pre class="bibtex-code"><code id="citation-dcc">@inproceedings{heung2024vulnerable,
+    title={“Vulnerable, Victimized, and Objectified”: Understanding Ableist Hate and Harassment Experienced by Disabled Content Creators on Social Media},
+    author={Heung, Sharon and Jiang, Lucy and Azenkot, Shiri and Vashistha, Aditya},
+    booktitle={Proceedings of the CHI Conference on Human Factors in Computing Systems},
+    pages={1--19},
+    year={2024},
+    url={https://doi.org/10.1145/3613904.3641949}
+}</code></pre>
+                </div>
 
+                <br>
                 <hr>
                 <br>
 
@@ -184,13 +218,30 @@
                     [<a href="https://www.youtube.com/watch?v=cw5JxsSwDkY" target="_blank">YouTube</a>]<br>
                 <br>
 
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-art" onclick="showElementToggle('bibtex-art', 'bibtex-btn-art1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-art2" onclick="copyCitation('citation-art', 'bibtex-btn-art2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-art" style="display: none">
+<pre class="bibtex-code"><code id="citation-art">@article{jiang2024artivism,
+    title={ARtivism: AR-Enabled Accessible Public Art and Advocacy},
+    author={Jiang, Lucy},
+    journal={arXiv preprint arXiv:2404.13285},
+    year={2024},
+    url={https://doi.org/10.48550/arXiv.2404.13285}
+}</code></pre>
+                </div>
+
+                <br>
+
                 <div class="textbox">
                     <h4><b>Get in touch!</b></h4>
                     If you're interested in digital information accessibility, specifically regarding subjective sources (images, videos, etc.), please reach out – I'd love to chat!<br>
                     <br>
                     <a href="mailto:lucjia@uw.edu" target="_blank"><img src="../files/icons/Email.png" class="social-icon margin-right-10" id="rounded-icon" alt="Email icon">lucjia@uw.edu</a>
                     <br><br>
-                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@LucyAJiang</a>
+                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@lucyajiang</a>
                 </div>
                 <br>
               </div>
@@ -210,7 +261,7 @@
 
     <script>
       // OPEN AND CLOSE DETAILS
-      function showElementToggle(section, buttonId) {
+      function showElementToggle(section, buttonId, text1, text2) {
         var x = document.getElementById(section);
         if (x.style.display == "none") {
           x.style.display = "block";
@@ -219,11 +270,29 @@
         }
 
         var elem = document.getElementById(buttonId);
-        if (elem.innerHTML == "Click for Abstract") {
-          elem.innerHTML = "Click to Close";
+        if (elem.innerHTML == text1) {
+          elem.innerHTML = text2;
         } else {
-          elem.innerHTML = "Click for Abstract";
+          elem.innerHTML = text1;
         }
+      }
+
+      // COPY CITATION
+      function copyCitation(citation, bibtexBtn) {
+        // Get the text field
+        var copyText = document.getElementById(citation);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.innerText);
+
+        // Change copy button text
+        var btn = document.getElementById(bibtexBtn);
+        if (btn.innerHTML == "Copy 📄") {
+          btn.innerHTML = "Copied! 📋";
+        }
+
+        // Change copy button back
+        setTimeout(function() { document.getElementById(bibtexBtn).innerHTML = "Copy 📄"; }, 3000);
       }
     </script>
 	</body>

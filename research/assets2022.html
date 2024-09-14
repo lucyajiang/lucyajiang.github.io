@@ -132,14 +132,31 @@
                 <div class="text-muted pad-left-20">
                   Accessible version<br>
                 </div>
+                
                 <br>
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-ad1" onclick="showElementToggle('bibtex-ad', 'bibtex-btn-ad1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-ad2" onclick="copyCitation('citation-ad', 'bibtex-btn-ad2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-ad" style="display: none">
+<pre class="bibtex-code"><code id="citation-ad">@inproceedings{jiang2022codesigning,
+    title={Co-Designing Systems to Support Blind and Low Vision Audio Description Writers},
+    author={Jiang, Lucy and Ladner, Richard},
+    booktitle={Proceedings of the 24th International ACM SIGACCESS Conference on Computers and Accessibility},
+    pages={1--3},
+    year={2022},
+    url={https://doi.org/10.1145/3517428.3550394}
+}</code></pre>
+                </div>
+
                 <div class="textbox">
                     <h4><b>Get in touch!</b></h4>
                     If you're interested in digital information accessibility, specifically regarding subjective sources (images, videos, etc.), please reach out – I'd love to chat!<br>
                     <br>
                     <a href="mailto:lucjia@uw.edu" target="_blank"><img src="../files/icons/Email.png" class="social-icon margin-right-10" id="rounded-icon" alt="Email icon">lucjia@uw.edu</a>
                     <br><br>
-                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@LucyAJiang</a>
+                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@lucyajiang</a>
                 </div>
                 <br>
               </div>
@@ -156,5 +173,42 @@
       </footer>
     </div>
 		<script src="js/bootstrap.min.js"></script>
+
+    <script>
+      // OPEN AND CLOSE DETAILS
+      function showElementToggle(section, buttonId, text1, text2) {
+        var x = document.getElementById(section);
+        if (x.style.display == "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var elem = document.getElementById(buttonId);
+        if (elem.innerHTML == text1) {
+          elem.innerHTML = text2;
+        } else {
+          elem.innerHTML = text1;
+        }
+      }
+
+      // COPY CITATION
+      function copyCitation(citation, bibtexBtn) {
+        // Get the text field
+        var copyText = document.getElementById(citation);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.innerText);
+
+        // Change copy button text
+        var btn = document.getElementById(bibtexBtn);
+        if (btn.innerHTML == "Copy 📄") {
+          btn.innerHTML = "Copied! 📋";
+        }
+
+        // Change copy button back
+        setTimeout(function() { document.getElementById(bibtexBtn).innerHTML = "Copy 📄"; }, 3000);
+      }
+    </script>
 	</body>
 </html>

@@ -69,7 +69,7 @@
               <h3>Works Presented</h3>
                 <p>I had the opportunity to present our paper, <b>Beyond Audio Description: Exploring 360° Video Accessibility with Blind and Low Vision Users Through Collaborative Creation</b>. It was especially exciting since this was my first-ever first-author paper! 🎉</p>
                 
-                <button onclick="showElementToggle('360vd', 'expandButton1')" class="btn expandButton" id="expandButton1">Click for Abstract</button>
+                <button onclick="showElementToggle('360vd', 'expandButton1', 'Click for Abstract', 'Click to Close')" class="btn expandButton" id="expandButton1">Click for Abstract</button>
                 <div id="360vd" style="display: none">
                   <div class="pad-top-20">
                     <div class="pad-left-20 quote">
@@ -83,7 +83,7 @@
                 <div class="pad-top-20"></div>
                 <p>Our poster, <b>"Invisible Illness Is No Longer Invisible": Making Social VR Avatars More Inclusive for Invisible Disability Representation</b>, was also presented at ASSETS!</p>
 
-                <button onclick="showElementToggle('socialvr', 'expandButton2')" class="btn expandButton" id="expandButton2">Click for Abstract</button>
+                <button onclick="showElementToggle('socialvr', 'expandButton2', 'Click for Abstract', 'Click to Close')" class="btn expandButton" id="expandButton2">Click for Abstract</button>
                 <div id="socialvr" style="display: none">
                   <div class="pad-top-20">
                     <div class="pad-left-20 quote">
@@ -135,7 +135,24 @@
                 <b>360° Demo Video</b>
                     [<a href="https://www.youtube.com/watch?v=z1Bb3JDTjz0" target="_blank">YouTube</a>]<br>
                 <br>
-                
+
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-360vd1" onclick="showElementToggle('bibtex-360vd', 'bibtex-btn-360vd1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-360vd2" onclick="copyCitation('citation-360vd', 'bibtex-btn-360vd2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-360vd" style="display: none">
+<pre class="bibtex-code"><code id="citation-360vd">@inproceedings{jiang2023beyond,
+    title={Beyond Audio Description: Exploring 360° Video Accessibility with Blind and Low Vision Users Through Collaborative Creation},
+    author={Jiang, Lucy and Phutane, Mahika and Azenkot, Shiri},
+    booktitle={Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility},
+    pages={1--17},
+    year={2023},
+    url={https://doi.org/10.1145/3597638.3608381}
+}</code></pre>
+                </div>
+
+                <br>
                 <hr>
                 <br>
 
@@ -147,13 +164,29 @@
                 </div>
                 <br>
 
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-socialvr1" onclick="showElementToggle('bibtex-socialvr', 'bibtex-btn-socialvr1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-socialvr2" onclick="copyCitation('citation-socialvr', 'bibtex-btn-socialvr2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-socialvr" style="display: none">
+<pre class="bibtex-code"><code id="citation-socialvr">@inproceedings{gualano2023invisible,
+    title={“Invisible Illness Is No Longer Invisible”: Making Social VR Avatars More Inclusive for Invisible Disability Representation},
+    author={Gualano, Ria J and Jiang, Lucy and Zhang, Kexin and Won, Andrea Stevenson and Azenkot, Shiri},
+    booktitle={Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility},
+    pages={1--4},
+    year={2023},
+    url={https://doi.org/10.1145/3597638.3614480}
+}</code></pre>
+                </div>
+
                 <div class="textbox">
                     <h4><b>Get in touch!</b></h4>
                     If you're interested in digital information accessibility, specifically regarding subjective sources (images, videos, etc.), please reach out – I'd love to chat!<br>
                     <br>
                     <a href="mailto:lucjia@uw.edu" target="_blank"><img src="../files/icons/Email.png" class="social-icon margin-right-10" id="rounded-icon" alt="Email icon">lucjia@uw.edu</a>
                     <br><br>
-                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@LucyAJiang</a>
+                    <a href="https://twitter.com/lucyajiang" target="_blank"><img src="../files/icons/Twitter.png" class="social-icon margin-right-10" id="rounded-icon" alt="Twitter logo">@lucyajiang</a>
                 </div>
                 <br>
               </div>
@@ -173,7 +206,7 @@
 
     <script>
       // OPEN AND CLOSE DETAILS
-      function showElementToggle(section, buttonId) {
+      function showElementToggle(section, buttonId, text1, text2) {
         var x = document.getElementById(section);
         if (x.style.display == "none") {
           x.style.display = "block";
@@ -182,11 +215,29 @@
         }
 
         var elem = document.getElementById(buttonId);
-        if (elem.innerHTML == "Click for Abstract") {
-          elem.innerHTML = "Click to Close";
+        if (elem.innerHTML == text1) {
+          elem.innerHTML = text2;
         } else {
-          elem.innerHTML = "Click for Abstract";
+          elem.innerHTML = text1;
         }
+      }
+
+      // COPY CITATION
+      function copyCitation(citation, bibtexBtn) {
+        // Get the text field
+        var copyText = document.getElementById(citation);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.innerText);
+
+        // Change copy button text
+        var btn = document.getElementById(bibtexBtn);
+        if (btn.innerHTML == "Copy 📄") {
+          btn.innerHTML = "Copied! 📋";
+        }
+
+        // Change copy button back
+        setTimeout(function() { document.getElementById(bibtexBtn).innerHTML = "Copy 📄"; }, 3000);
       }
     </script>
 	</body>
