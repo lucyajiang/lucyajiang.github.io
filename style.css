@@ -196,3 +196,23 @@ figcaption {
 .dropdown-item:hover {
   background-color: #250857;
 }
+
+/* Cards */
+
+.card {
+  margin: 0px 20px 20px 0px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  transition: all .1s ease;
+  -webkit-transition: all .1s ease;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
