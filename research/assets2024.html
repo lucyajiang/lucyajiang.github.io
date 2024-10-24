@@ -134,9 +134,80 @@
                 <b>Video Presentation</b>
                     [<a href="https://www.youtube.com/watch?v=FX0smVQOH9Q" target="_blank">YouTube</a>]<br>
                 <br>
-                
+
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-socialvr1" onclick="showElementToggle('bibtex-socialvr', 'bibtex-btn-socialvr1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-socialvr2" onclick="copyCitation('citation-socialvr', 'bibtex-btn-socialvr2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-socialvr" style="display: none">
+<pre class="bibtex-code"><code id="citation-socialvr">@inproceedings{gualanojiang2024try,
+  title={“I Try to Represent Myself as I Am”: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars},
+  author={Gualano, Ria J and Jiang, Lucy and Zhang, Kexin and Shende, Tanisha and Won, Andrea Stevenson and Azenkot, Shiri},
+  booktitle={Proceedings of the 26th International ACM SIGACCESS Conference on Computers and Accessibility},
+  pages={1--15},
+  year={2024},
+  url={https://doi.org/10.1145/3663548.3675620}
+}</code></pre>
+                </div>
+
+                <br>
                 <hr>
                 <br>
+
+
+                <h6><b>Exploring the Accessibility of Social Virtual Reality for People with ADHD and Autism: Preliminary Insights</b></h6>
+                <b>Poster</b>
+                [<a href="" target="_blank">DOI</a> / <a href="" target="_blank">PDF</a>]<br>
+                <div class="text-muted pad-left-20">
+                  J. Collins, W. Ko, T. Shende, S. Y. Lin, <b>L. Jiang</b>, A. S. Won, S. Azenkot<br>
+                </div>
+                <br>
+
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-audhd1" onclick="showElementToggle('bibtex-audhd', 'bibtex-btn-audhd1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-adudhd2" onclick="copyCitation('citation-audhd', 'bibtex-btn-audhd2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-audhd" style="display: none">
+<pre class="bibtex-code"><code id="citation-audhd">@inproceedings{collins2024exploring,
+    title={Exploring the Accessibility of Social Virtual Reality for People with ADHD and Autism: Preliminary Insights},
+    author={Collins, Jazmin and Ko, Woojin and Shende, Tanisha and Lin, Sharon Y and Jiang, Lucy and Won, Andrea Stevenson and Azenkot, Shiri},
+    booktitle={Proceedings of the 26th International ACM SIGACCESS Conference on Computers and Accessibility},
+    pages={1--5},
+    year={2024},
+    url={https://doi.org/10.1145/3663548.3687134}
+}</code></pre>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+
+                <h6><b>Making Urban Art Accessible: Current Art Access Techniques, Design Considerations, and the Role of AI</b></h6>
+                <b>Workshop Paper</b>
+                [<a href="" target="_blank">DOI</a> / <a href="../files/papers/ASSETS24-WorkshopUrbanArt.pdf" target="_blank">PDF</a>]<br>
+                <div class="text-muted pad-left-20">
+                  <b>L. Jiang</b>, J. E. Froehlich, L. Findlater<br>
+                </div>
+                <br>
+<!-- 
+                <div class="bibtex-header">
+                    <b>BibTeX</b>
+                    <a class="bibtex-btn" id="bibtex-btn-audhd1" onclick="showElementToggle('bibtex-audhd', 'bibtex-btn-audhd1', 'Show', 'Hide')">Show</a>  
+                    <a class="bibtex-btn" id="bibtex-btn-adudhd2" onclick="copyCitation('citation-audhd', 'bibtex-btn-audhd2')">Copy 📄</a>  
+                </div>
+                <div class="bibtex" id="bibtex-audhd" style="display: none">
+<pre class="bibtex-code"><code id="citation-audhd">@inproceedings{jiang2024making,
+    title={Making Urban Art Accessible: Current Art Access Techniques, Design Considerations, and the Role of AI},
+    author={Jiang, Lucy and Froehlich, Jon E and Findlater, Leah},
+    journal={arXiv}
+    year={2024},
+    url={}
+}</code></pre> -->
+                </div>
+
 
                 <div class="textbox">
                     <h4><b>Get in touch!</b></h4>
@@ -164,7 +235,7 @@
 
     <script>
       // OPEN AND CLOSE DETAILS
-      function showElementToggle(section, buttonId) {
+      function showElementToggle(section, buttonId, text1, text2) {
         var x = document.getElementById(section);
         if (x.style.display == "none") {
           x.style.display = "block";
@@ -173,11 +244,29 @@
         }
 
         var elem = document.getElementById(buttonId);
-        if (elem.innerHTML == "Click for Abstract") {
-          elem.innerHTML = "Click to Close";
+        if (elem.innerHTML == text1) {
+          elem.innerHTML = text2;
         } else {
-          elem.innerHTML = "Click for Abstract";
+          elem.innerHTML = text1;
         }
+      }
+
+      // COPY CITATION
+      function copyCitation(citation, bibtexBtn) {
+        // Get the text field
+        var copyText = document.getElementById(citation);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.innerText);
+
+        // Change copy button text
+        var btn = document.getElementById(bibtexBtn);
+        if (btn.innerHTML == "Copy 📄") {
+          btn.innerHTML = "Copied! 📋";
+        }
+
+        // Change copy button back
+        setTimeout(function() { document.getElementById(bibtexBtn).innerHTML = "Copy 📄"; }, 3000);
       }
     </script>
 	</body>
