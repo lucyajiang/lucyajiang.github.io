@@ -26,6 +26,14 @@
   width: 49%;
 }
 
+.image-29-width {
+  width: 29%;
+}
+
+.image-40-width {
+  width: 40%;
+}
+
 .image-grid {
   width: 49%;
   padding-right: 8px;
@@ -49,6 +57,13 @@
 .image-wrap-text-right-landscape {
   float: right;
   width: 50%;
+  padding-left: 24px;
+  padding-bottom: 12px;
+}
+
+.image-wrap-text-right-landscape-small {
+  float: right;
+  width: 40%;
   padding-left: 24px;
   padding-bottom: 12px;
 }
