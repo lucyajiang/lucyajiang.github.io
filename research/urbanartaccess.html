@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Urban and Public Art Accessibility - Lucy Jiang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PhD Student studying Human Centered Design and Engineering at UW">
+    <meta name="author" content="Lucy Jiang">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2295%22>👩🏻‍💻</text></svg>">
+  </head>
+
+	<body>
+    <div class="d-flex flex-column min-vh-100">
+      <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-purple">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="https://lucyajiang.github.io/">👩🏻‍💻 Lucy Jiang</a>
+						<div class="align-content-lg-end">
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	              <span class="navbar-toggler-icon"></span>
+	            </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <div class="nav-item dropdown">
+                    <a class="nav-link active" href="https://lucyajiang.github.io/research" id="navbarDropdownMenuLink" aria-expanded="false">Research</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/research/assets2022">BLV Audio Description Creation (ASSETS 2022)</a>
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/research/assets2023">360° Video Accessibility (ASSETS 2023)</a>
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/research/chi2024">Contextual Video Accessibility (CHI 2024)</a>
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/research/assets2024">Invisible Disabilities in Social VR (ASSETS 2024)</a>
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/research/chi2025">ADHD and Video Accessibility (CHI 2025)</a>
+                      <a class="dropdown-item nav-link active" href="https://lucyajiang.github.io/research/urbanartaccess">Urban and Public Art Accessibility</a>
+                    </div>
+                  </div>
+                  <a class="nav-item nav-link" href="https://lucyajiang.github.io/publications">Publications</a>
+                  <a class="nav-item nav-link" href="https://lucyajiang.github.io/teaching">Teaching</a>
+                  <a class="nav-item nav-link" href="https://lucyajiang.github.io/leadership">Leadership</a>
+                  <div class="nav-item dropdown">
+                    <a class="nav-link" href="https://lucyajiang.github.io/projects" id="navbarDropdownMenuLink" aria-expanded="false">Projects</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/projects/murals">Mural Accessibility</a>
+                      <a class="dropdown-item nav-link" href="https://lucyajiang.github.io/projects/pitech">Public Space Accessibility</a>
+                    </div>
+                  </div>                  
+                  <a class="nav-item nav-link" href="https://lucyajiang.github.io/about">About</a>
+                  <a class="nav-item nav-link" target="_blank" href="https://docs.google.com/document/d/1Hm27NcOi4y6__FzeflxMZ07KNhEJY1ckNenl2m-dx-A/edit?usp=sharing">CV</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <br>
+
+      <main class="flex-fill">
+        <div class="container">
+          <div class="row justify-content-start gx-5 pad-top-30">
+            <div class="col-8">
+              <h2>Urban and Public Art Accessibility</h2>
+              <div class="pad-top-10">
+                
+              </div>
+            </div>
+
+            <div class="col-4">
+              <h2>Links</h2>
+              <div class="pad-top-10">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </main>
+
+	  <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+          <span class="text-muted">&copy Lucy Jiang 2026</span>
+        </div>
+      </footer>
+    </div>
+		<script src="js/bootstrap.min.js"></script>
+
+    <script>
+      // OPEN AND CLOSE DETAILS
+      function showElementToggle(section, buttonId, text1, text2) {
+        var x = document.getElementById(section);
+        if (x.style.display == "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+        var elem = document.getElementById(buttonId);
+        if (elem.innerHTML == text1) {
+          elem.innerHTML = text2;
+        } else {
+          elem.innerHTML = text1;
+        }
+      }
+
+      // COPY CITATION
+      function copyCitation(citation, bibtexBtn) {
+        // Get the text field
+        var copyText = document.getElementById(citation);
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.innerText);
+
+        // Change copy button text
+        var btn = document.getElementById(bibtexBtn);
+        if (btn.innerHTML == "Copy 📄") {
+          btn.innerHTML = "Copied! 📋";
+        }
+
+        // Change copy button back
+        setTimeout(function() { document.getElementById(bibtexBtn).innerHTML = "Copy 📄"; }, 3000);
+      }
+    </script>
+	</body>
+</html>
